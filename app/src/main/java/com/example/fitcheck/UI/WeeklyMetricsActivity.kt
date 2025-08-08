@@ -15,14 +15,15 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class WeeklyMetricsActivity : AppCompatActivity() {
-
+    //var for graph
     private lateinit var rvMetrics: RecyclerView
+    //init
     private lateinit var WeeklyMetrics_LBL_DateRange: TextView
     private lateinit var WeeklyMetrics_LBL_avgWeight: TextView
     private lateinit var WeeklyMetrics_LBL_avgCalories: TextView
     private lateinit var WeeklyMetrics_LBL_avgSleep: TextView
     private lateinit var WeeklyMetrics_LBL_avgSteps: TextView
-
+    //crate daily Tracker Manager
     private val dailyTrackerManager = DailyTrackerManager()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,8 +55,11 @@ class WeeklyMetricsActivity : AppCompatActivity() {
                     WeeklyMetric("Sleep", weekEntries.map { it?.sleep?.toFloat() ?: 0f }),
                     WeeklyMetric("Steps", weekEntries.map { it?.steps?.toFloat() ?: 0f })
                 )
+                //show the graph
                 setupRecyclerView(weeklyMetrics)
+                //show range of the week
                 updateDateRange()
+                //show average in text
                 updateWeeklyAverages(weeklyMetrics)
             }
 
@@ -68,7 +72,7 @@ class WeeklyMetricsActivity : AppCompatActivity() {
         rvMetrics.adapter = WeeklyMetricAdapter(weeklyMetrics)
     }
 
-    //  Updates the the current week's date range
+    // Updates the the current week's date range
     private fun updateDateRange() {
         val cal = Calendar.getInstance()
         val endDate = cal.time
@@ -78,7 +82,7 @@ class WeeklyMetricsActivity : AppCompatActivity() {
         WeeklyMetrics_LBL_DateRange.text = "${sdf.format(startDate)} - ${sdf.format(endDate)}"
     }
 
-    //Updates the average values
+    //Updates the average values from every list
     private fun updateWeeklyAverages(weeklyMetrics: List<WeeklyMetric>) {
         WeeklyMetrics_LBL_avgWeight.text = "%.1f".format(weeklyMetrics[0].values.average())
         WeeklyMetrics_LBL_avgCalories.text = "%.0f".format(weeklyMetrics[1].values.average())

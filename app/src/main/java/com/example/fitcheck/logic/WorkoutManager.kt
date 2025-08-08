@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class WorkoutManager {
-
+    //init DB && UID
     private val db = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
 

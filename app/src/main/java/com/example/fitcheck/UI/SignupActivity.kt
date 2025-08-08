@@ -10,7 +10,7 @@ import com.example.fitcheck.R
 import com.google.firebase.auth.FirebaseAuth
 
 class SignupActivity : AppCompatActivity() {
-
+    //init
     private lateinit var auth: FirebaseAuth
     private lateinit var SingUp_ET_emailInput: EditText
     private lateinit var SingUp_ET_passwordInput: EditText
@@ -19,7 +19,7 @@ class SignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
-
+        //init FBAuth
         auth = FirebaseAuth.getInstance()
         findViews()
         setupListeners()

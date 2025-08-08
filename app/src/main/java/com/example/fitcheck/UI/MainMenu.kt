@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fitcheck.R
 
 class MainMenu : AppCompatActivity() {
-
+    //init
     private lateinit var Menu_BTN_goals: Button
     private lateinit var Menu_BTN_dataEntry: Button
     private lateinit var Menu_BTN_workouts: Button

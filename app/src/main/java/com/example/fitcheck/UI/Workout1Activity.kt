@@ -16,7 +16,7 @@ import com.example.fitcheck.logic.WorkoutManager
 import com.example.fitcheck.model.WorkoutEntry
 
 class Workout1Activity : AppCompatActivity() {
-
+    //init
     private lateinit var Workout1_RV_Exercises: RecyclerView
     private lateinit var Workout1_BTN_AddExerciseButton: Button
     private lateinit var Workout1_BTN_Save: Button
@@ -33,6 +33,7 @@ class Workout1Activity : AppCompatActivity() {
         setContentView(R.layout.activity_workout1)
 
         findViews()
+        //create adapter to show the exercises in recycler view
         adapter = ExerciseAdapter(exercises)
         Workout1_RV_Exercises.layoutManager = LinearLayoutManager(this)
         Workout1_RV_Exercises.adapter = adapter

@@ -17,9 +17,9 @@ import java.util.*
 
 class WeeklyProgressManager(private val activity: Activity) {
 
-    private val storageRef = Firebase.storage.reference
+    private val storageRef = Firebase.storage.reference//pointer to root packet
     private val dateFormatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-    private var currentFileUri: Uri? = null
+    private var currentFileUri: Uri? = null//var to save pic
     private lateinit var imageView: ImageView
     private lateinit var onImageUploaded: () -> Unit
     private lateinit var pickMediaLauncher: ActivityResultLauncher<PickVisualMediaRequest>
@@ -68,9 +68,10 @@ class WeeklyProgressManager(private val activity: Activity) {
     // Loads the progress photo for the current week from Firebase Storage
     fun loadImageForCurrentWeek(userId: String) {
         val folder = dateFormatter.format(currentWeekDate)
-        val ref = storageRef.child("progressPhotos/$userId/$folder.jpg")
+        val ref = storageRef.child("progressPhotos/$userId/$folder.jpg")//create path
 
         ref.downloadUrl
+            //try to download
             .addOnSuccessListener { uri ->
                 ImageLoader.getInstance().loadImage(uri.toString(), imageView)
             }

@@ -9,7 +9,7 @@ import com.example.fitcheck.logic.GoalsManager
 import com.example.fitcheck.model.Goals
 
 class SetUpGoals : AppCompatActivity() {
-
+    //init
     private lateinit var setUpGoals_ET_calories: TextView
     private lateinit var setUpGoals_ET_carbs: EditText
     private lateinit var setUpGoals_ET_protein: EditText
@@ -19,7 +19,8 @@ class SetUpGoals : AppCompatActivity() {
     private lateinit var setUpGoals_ET_weight: EditText
     private lateinit var setUpGoals_BTN_save_goals: Button
 
-    private val goalsManager = GoalsManager() // **בלי קונטקסט**
+    //create goal manager
+    private val goalsManager = GoalsManager()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,20 +75,24 @@ class SetUpGoals : AppCompatActivity() {
 
     private fun setupButton() {
         setUpGoals_BTN_save_goals.setOnClickListener {
+            // extract from text box and convert to int
             val carbs = setUpGoals_ET_carbs.text.toString().toIntOrNull() ?: 0
             val protein = setUpGoals_ET_protein.text.toString().toIntOrNull() ?: 0
             val fat = setUpGoals_ET_fat.text.toString().toIntOrNull() ?: 0
             val calories = goalsManager.calculateCalories(carbs, protein, fat)
 
+            //create obj goals and setup
             val updatedGoals = Goals(
                 carbs = carbs,
                 protein = protein,
                 fat = fat,
+                //extract from text box and convert to int
                 steps = setUpGoals_ET_steps.text.toString().toIntOrNull() ?: 0,
                 sleep = setUpGoals_ET_sleep.text.toString().toIntOrNull() ?: 0,
                 weight = setUpGoals_ET_weight.text.toString().toFloatOrNull() ?: 0f,
                 calories = calories
             )
+            //save to DB
             goalsManager.saveGoals(updatedGoals,
                 onSuccess = {
                     Toast.makeText(this, "Goals saved!", Toast.LENGTH_SHORT).show()
@@ -101,13 +106,17 @@ class SetUpGoals : AppCompatActivity() {
 
     // Every change triggers updateCaloriesView to update calories live
     private fun setupCaloriesCalculator() {
+        //obj that start listing when  we have some change
         val watcher = object : android.text.TextWatcher {
+            //every time some thing change we update the calories
             override fun afterTextChanged(s: android.text.Editable?) {
                 updateCaloriesView()
             }
+            //empty because they must be
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         }
+        //watcher on this text
         setUpGoals_ET_carbs.addTextChangedListener(watcher)
         setUpGoals_ET_protein.addTextChangedListener(watcher)
         setUpGoals_ET_fat.addTextChangedListener(watcher)
@@ -115,10 +124,12 @@ class SetUpGoals : AppCompatActivity() {
 
     //Calculates calories based on the latest macros
     private fun updateCaloriesView() {
+        //extract from text box and convert to int
         val carbs = setUpGoals_ET_carbs.text.toString().toIntOrNull() ?: 0
         val protein = setUpGoals_ET_protein.text.toString().toIntOrNull() ?: 0
         val fat = setUpGoals_ET_fat.text.toString().toIntOrNull() ?: 0
 
+        //calc aging and setup
         val calories = goalsManager.calculateCalories(carbs, protein, fat)
         setUpGoals_ET_calories.text = calories.toString()
     }

@@ -14,7 +14,7 @@ import com.example.fitcheck.logic.WeeklyProgressManager
 import com.google.firebase.auth.FirebaseAuth
 
 class ProgressPhotoActivity : AppCompatActivity() {
-
+    //init
     private lateinit var progress_TV_week_range: TextView
     private lateinit var progress_BTN_prev: Button
     private lateinit var progress_BTN_next: Button
@@ -22,7 +22,7 @@ class ProgressPhotoActivity : AppCompatActivity() {
     private lateinit var progress_IV_photo: ImageView
     private lateinit var weeklyManager: WeeklyProgressManager
 
-    // ActivityResultLauncher for picking an image from the gallery
+    // create ActivityResultLauncher for picking an image from the gallery
     private val pickMediaLauncher = registerForActivityResult(
         ActivityResultContracts.PickVisualMedia()
     ) { uri ->
@@ -120,6 +120,7 @@ class ProgressPhotoActivity : AppCompatActivity() {
 
     // Checks for storage permission. If granted, opens the gallery
     private fun checkPermissionAndPickImage() {
+        // check wuch ver for permission to storage
         val permission = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
             Manifest.permission.READ_MEDIA_IMAGES
         } else {
@@ -128,15 +129,18 @@ class ProgressPhotoActivity : AppCompatActivity() {
         Log.d("ProgressPhoto", "Checking permission: $permission")
 
         when {
+            //check if we have permission
             ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED -> {
                 Log.d("ProgressPhoto", "Permission granted")
                 weeklyManager.pickImageFromGallery()
             }
+            //check if need to explain(uf user denied first time)
             shouldShowRequestPermissionRationale(permission) -> {
                 Log.d("ProgressPhoto", "Should show permission rationale")
                 Toast.makeText(this, "We need permission to access your images", Toast.LENGTH_LONG).show()
                 requestPermissionLauncher.launch(permission)
             }
+            //ask without explaining
             else -> {
                 Log.d("ProgressPhoto", "Requesting permission")
                 requestPermissionLauncher.launch(permission)

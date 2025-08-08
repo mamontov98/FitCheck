@@ -13,6 +13,7 @@ import com.example.fitcheck.utilities.DemoDataManager
 
 class LogInActivity : AppCompatActivity() {
 
+    // init
     private lateinit var auth: FirebaseAuth
     private lateinit var LogIn_ET_emailInput: EditText
     private lateinit var LogIn_ET_passwordInput: EditText
@@ -24,7 +25,9 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
+        // init FB_AUTH
         auth = FirebaseAuth.getInstance()
+
         findViews()
         setupListeners()
     }
@@ -58,9 +61,12 @@ class LogInActivity : AppCompatActivity() {
 
     //  Handles the user login
     private fun handleLogin() {
+
+        //read email and password
         val email = LogIn_ET_emailInput.text.toString().trim()
         val password = LogIn_ET_passwordInput.text.toString().trim()
 
+        //check if one of them empty
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             return

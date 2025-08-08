@@ -18,9 +18,9 @@ import java.util.Date
 
 class WeeklyCheckUpActivity : AppCompatActivity() {
 
+    //init
     private lateinit var checkup_BTN_send: Button
     private lateinit var checkup_BTN_Photo_Progress: Button
-
     private lateinit var etName: EditText
     private lateinit var etPositive: EditText
     private lateinit var etEnergy: EditText
@@ -46,9 +46,11 @@ class WeeklyCheckUpActivity : AppCompatActivity() {
         checkup_BTN_send.setOnClickListener {
             Toast.makeText(this, "Send button clicked!", Toast.LENGTH_SHORT).show()
 
+            //calc date and create range
             val currentWeekStart = DateHelper.getStartOfWeek(Date())
             val weekRange = DateHelper.getFormattedWeekRange(currentWeekStart)
 
+            //crete map from questionnaire
             val questionnaire = mapOf(
                 "Name" to etName.text.toString(),
                 "Positive thing this week" to etPositive.text.toString(),
@@ -65,7 +67,7 @@ class WeeklyCheckUpActivity : AppCompatActivity() {
             val dailyTrackerManager = DailyTrackerManager()
             val goalsManager = GoalsManager()
 
-            // Step 1: Load user goals
+            //load user goals
             goalsManager.loadGoals({ goals ->
 
                 val goalsMap = mapOf(
@@ -75,7 +77,7 @@ class WeeklyCheckUpActivity : AppCompatActivity() {
                     "Steps Goal" to "${goals.steps}"
                 )
 
-                // Step 2: Load weekly data
+                //load weekly data
                 dailyTrackerManager.loadWeekEntries({ weekEntries ->
 
                     val weights = weekEntries.mapNotNull { it?.weight?.toDouble() }
@@ -83,6 +85,7 @@ class WeeklyCheckUpActivity : AppCompatActivity() {
                     val sleep = weekEntries.mapNotNull { it?.sleep?.toDouble() }
                     val steps = weekEntries.mapNotNull { it?.steps?.toDouble() }
 
+                    //calc average
                     val averagesMap = mapOf(
                         "Average Weight" to "%.1f kg".format(if (weights.isNotEmpty()) weights.average() else 0.0),
                         "Average Calories" to "%.0f kcal".format(if (calories.isNotEmpty()) calories.average() else 0.0),
@@ -90,7 +93,7 @@ class WeeklyCheckUpActivity : AppCompatActivity() {
                         "Average Steps" to "%.0f".format(if (steps.isNotEmpty()) steps.average() else 0.0)
                     )
 
-                    // Step 3: Generate PDF
+                    //generate PDF
                     val pdfFile = CheckupPdfManager.generatePdf(
                         context = this,
                         weekRange = weekRange,
@@ -100,7 +103,7 @@ class WeeklyCheckUpActivity : AppCompatActivity() {
                     )
                     Toast.makeText(this, "Generating PDF and sending...", Toast.LENGTH_SHORT).show()
 
-                    // Step 4: Send email
+                    //send email
                     EmailManager.sendEmailWithPdf(
                         context = this,
                         pdfFile = pdfFile,
