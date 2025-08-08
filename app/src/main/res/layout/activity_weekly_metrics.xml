@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222">
+
+    <!-- Header: Date Range, Home Button, Title -->
+    <TextView
+        android:id="@+id/WeeklyMetrics_LBL_DateRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13/06/2025 - 20/06/2025"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="#D2FF2F"
+        android:textColor="#222222"
+        android:padding="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <ImageView
+        android:id="@+id/ivHome"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/check"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekly Metrics\n&amp; Averages"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/WeeklyMetrics_LBL_DateRange"
+        android:layout_alignTop="@id/WeeklyMetrics_LBL_DateRange"
+        android:layout_marginStart="18dp"/>
+
+    <!-- RecyclerView למדדים -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMetrics"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/WeeklyMetrics_LBL_DateRange"
+        android:layout_above="@id/weeklyAveragesLayout"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"/>
+
+    <!-- Weekly Averages Footer -->
+    <LinearLayout
+        android:id="@+id/weeklyAveragesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:layout_above="@id/bottom_bar"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/tvWeeklyAverages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weekly Averages"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/WeeklyMetrics_LBL_avgWeight"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="#D2FF2F"
+                android:text="182.3 lb"
+                android:textColor="#222222"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_margin="4dp"/>
+            <TextView
+                android:id="@+id/WeeklyMetrics_LBL_avgCalories"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="#D2FF2F"
+                android:text="2405 kcal"
+                android:textColor="#222222"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/WeeklyMetrics_LBL_avgSleep"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="#D2FF2F"
+                android:text="7.1 h"
+                android:textColor="#222222"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_margin="4dp"/>
+            <TextView
+                android:id="@+id/WeeklyMetrics_LBL_avgSteps"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:background="#D2FF2F"
+                android:text="7250"
+                android:textColor="#222222"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bottom_bar"
+        layout="@layout/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>

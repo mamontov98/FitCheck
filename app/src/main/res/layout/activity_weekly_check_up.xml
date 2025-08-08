@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919">
+
+    <!-- ScrollView עם כל השאלות -->
+    <ScrollView
+        android:id="@+id/checkup_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/checkup_BTN_Photo_Progress"
+        android:layout_marginBottom="30dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly\nCheck-Up"
+                android:textColor="#FFFFFF"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="36dp" />
+
+            <!-- שאלות -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First &amp; Last Name"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <EditText
+                android:id="@+id/checkup_ET_name"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="Enter your name"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tell me one positive thing that happened this week"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <EditText
+                android:id="@+id/checkup_ET_positive"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="Enter your response"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <!-- כל השאלות בקצרה להמשך - דוגמה לשאלה בסולם 1-10 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On a scale of 1-10 rate your energy levels this week"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <EditText
+                android:id="@+id/checkup_ET_energy"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="1-10"
+                android:inputType="number"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On a scale of 1-10 rate your recovery levels this week"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+            <EditText
+                android:id="@+id/checkup_ET_recovery"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="1-10"
+                android:inputType="number"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On a scale of 1-10 rate your hunger levels this week"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+            <EditText
+                android:id="@+id/checkup_ET_hunger"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="1-10"
+                android:inputType="number"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On a scale of 1-10 rate your mood levels this week"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+            <EditText
+                android:id="@+id/checkup_ET_mood"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="1-10"
+                android:inputType="number"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On a scale of 1-10 rate your stress levels this week"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+            <EditText
+                android:id="@+id/checkup_ET_stress"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="1-10"
+                android:inputType="number"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Were there any challenges this week that have impacted your nutrition"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+            <EditText
+                android:id="@+id/checkup_ET_challenge_nutrition"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="Enter your response"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Were there any challenges this week that have impacted your workouts"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+            <EditText
+                android:id="@+id/checkup_ET_challenge_workouts"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="Enter your response"
+                android:textColorHint="#888"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How can I be of help and support to make this upcoming week even better"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+            <EditText
+                android:id="@+id/checkup_ET_support"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#232323"
+                android:textColor="#FFF"
+                android:hint="Enter your response"
+                android:textColorHint="#888"
+                android:layout_marginBottom="36dp"
+                android:padding="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/checkup_BTN_Photo_Progress"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_above="@+id/checkup_BTN_send"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp"
+        android:text="Photo Album"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#191919"
+        android:backgroundTint="#D5FF39"  />
+    <!-- כפתור ירוק קבוע למטה -->
+    <Button
+        android:id="@+id/checkup_BTN_send"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_above="@id/bottom_bar"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp"
+        android:text="Send"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#191919"
+        android:backgroundTint="#D2FF39" />
+
+    <include
+        android:id="@+id/bottom_bar"
+        layout="@layout/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp" />
+
+</RelativeLayout>

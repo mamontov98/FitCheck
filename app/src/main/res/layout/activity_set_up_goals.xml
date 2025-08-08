@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#232323"
+    tools:context=".UI.SetUpGoals">
+
+    <!-- גלילה לכל התוכן המרכזי -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/setUpGoals_BTN_save_goals"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/goals_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="36dp"
+            android:paddingBottom="36dp">
+
+            <!-- כותרת -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:text="Set Up Goals"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <!-- Calories (טקסט בלבד, לא EditText) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/menu_button"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_calories"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Calories"
+                    android:textColor="#232323"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/setUpGoals_ET_calories"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/value_box"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAA"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <!-- Carbs -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/menu_button"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_carbs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Carbohydrates"
+                    android:textColor="#232323"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/setUpGoals_ET_carbs"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/value_box"
+                    android:gravity="center"
+                    android:hint="gram"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAA"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <!-- Protein -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/menu_button"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_protein"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Protein"
+                    android:textColor="#232323"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/setUpGoals_ET_protein"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/value_box"
+                    android:gravity="center"
+                    android:hint="gram"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAA"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <!-- Fat -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/menu_button"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_fat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fat"
+                    android:textColor="#232323"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/setUpGoals_ET_fat"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/value_box"
+                    android:gravity="center"
+                    android:hint="gram"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAA"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <!-- Steps -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/menu_button"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_steps"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Steps"
+                    android:textColor="#232323"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/setUpGoals_ET_steps"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/value_box"
+                    android:gravity="center"
+                    android:hint="number"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAA"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <!-- Sleep -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/menu_button"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_sleep"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sleep"
+                    android:textColor="#232323"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/setUpGoals_ET_sleep"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/value_box"
+                    android:gravity="center"
+                    android:hint="hours"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAA"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <!-- Weight -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/menu_button"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_weight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Weight"
+                    android:textColor="#232323"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/setUpGoals_ET_weight"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/value_box"
+                    android:gravity="center"
+                    android:hint="KG"
+                    android:inputType="numberDecimal"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAA"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/setUpGoals_BTN_save_goals"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_above="@id/bottom_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#26CE6B"
+        android:text="Save Goals"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- בר תפריט למטה -->
+    <include
+        android:id="@+id/bottom_bar"
+        layout="@layout/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp" />
+
+</RelativeLayout>

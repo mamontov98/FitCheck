@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="340dp"
+    android:layout_height="70dp"
+    android:background="@drawable/menu_button"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="0dp"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <TextView
+        android:id="@+id/goal_label"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Carbohydrates"
+        android:textColor="#232323"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:gravity="center_vertical"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/goal_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="g"
+        android:textColor="#888888"
+        android:textSize="28sp"
+        android:gravity="center_vertical|end"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

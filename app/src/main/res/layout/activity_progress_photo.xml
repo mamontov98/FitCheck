@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#232323"
+    android:padding="16dp">
+
+    <!-- תצוגת תאריך שבוע -->
+    <TextView
+        android:id="@+id/progress_TV_week_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16.06.2025 - 22.06.2025"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <!-- קונטיינר יחסי לתמונה -->
+    <RelativeLayout
+        android:id="@+id/progress_container_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/progress_TV_week_range"
+        android:layout_above="@id/progress_BTN_upload"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/progress_IV_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/unavailable_photo"
+            android:background="@drawable/login_input"
+            android:elevation="4dp"
+            android:contentDescription="Progress photo" />
+    </RelativeLayout>
+
+    <!-- כפתור העלאת תמונה -->
+    <Button
+        android:id="@+id/progress_BTN_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progress_BTN_prev"
+        android:layout_marginBottom="16dp"
+        android:text="Upload photo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D5FF39"
+        android:textColor="#232323"
+        android:elevation="2dp" />
+
+    <!-- כפתור שבוע קודם -->
+    <Button
+        android:id="@+id/progress_BTN_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/bottom_bar"
+        android:layout_marginBottom="16dp"
+        android:text="last week"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D5FF39"
+        android:textColor="#232323"
+        android:elevation="2dp" />
+
+    <!-- כפתור שבוע הבא -->
+    <Button
+        android:id="@+id/progress_BTN_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@id/progress_BTN_prev"
+        android:text="next week"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D5FF39"
+        android:textColor="#232323"
+        android:elevation="2dp" />
+
+    <!-- בר תפריט למטה -->
+    <include
+        android:id="@+id/bottom_bar"
+        layout="@layout/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp" />
+
+</RelativeLayout>
+
+

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#232323"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <!-- כותרת -->
+    <TextView
+        android:id="@+id/Menu_LBL_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:textSize="54sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- כפתור 1 -->
+    <Button
+        android:id="@+id/Menu_BTN_goals"
+        android:layout_width="340dp"
+        android:layout_height="70dp"
+        android:text="Setup Goals"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D5FF39"
+        android:textColor="#232323"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="0dp"/>
+
+    <!-- כפתור 2 -->
+    <Button
+        android:id="@+id/Menu_BTN_dataEntry"
+        android:layout_width="340dp"
+        android:layout_height="70dp"
+        android:text="Daily Data Entry"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D5FF39"
+        android:textColor="#232323"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp"/>
+
+    <!-- כפתור 3 -->
+    <Button
+        android:id="@+id/Menu_BTN_workouts"
+        android:layout_width="340dp"
+        android:layout_height="70dp"
+        android:text="Workouts"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D5FF39"
+        android:textColor="#232323"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp"/>
+
+    <!-- כפתור 4 -->
+    <Button
+        android:id="@+id/Menu_BTN_metrics"
+        android:layout_width="340dp"
+        android:layout_height="70dp"
+        android:text="Weekly Metrics"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D5FF39"
+        android:textColor="#232323"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp"/>
+
+    <!-- כפתור 5 -->
+    <Button
+        android:id="@+id/Menu_BTN_checkup"
+        android:layout_width="340dp"
+        android:layout_height="70dp"
+        android:text="Check-Up"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:backgroundTint="#D5FF39"
+        android:textColor="#232323"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp"/>
+    <Button
+        android:id="@+id/MainMenu_BTN_Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#FF5757"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"/>
+
+</LinearLayout>

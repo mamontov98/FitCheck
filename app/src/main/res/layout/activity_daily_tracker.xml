@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#232323">
+
+        <LinearLayout
+            android:id="@+id/content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp"
+            android:gravity="center_horizontal">
+
+            <!-- כותרת -->
+            <TextView
+                android:id="@+id/title_daily_tracker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily Tracker"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp"
+                android:textStyle="bold|italic"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18dp"/>
+
+
+            <!-- Calories -->
+            <LinearLayout
+                android:id="@+id/row_calories"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/label_calories"
+                    android:layout_width="0dp"
+                    android:ellipsize="end"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Calories"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/DailyTrackerEntry_ET_Calories"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/value_box"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:layout_marginEnd="6dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_calories"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_weight="3"
+                    android:progress="0"
+                    android:max="250"
+                    android:progressDrawable="@drawable/progress_bar_green"
+                    android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:id="@+id/DailyTrackerEntry_LBL_MaxCalories"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0 kal"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+
+            <!-- Carbs -->
+            <LinearLayout
+                android:id="@+id/row_carbs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/label_carbs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Carbs"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/DailyTrackerEntry_ET_Carbs"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/value_box"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:layout_marginEnd="6dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_carbs"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_weight="3"
+                    android:progress="0"
+                    android:max="250"
+                    android:progressDrawable="@drawable/progress_bar_green"
+                       android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:id="@+id/DailyTrackerEntry_LBL_MaxCarbs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="250 g"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- Protein -->
+            <LinearLayout
+                android:id="@+id/row_protein"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/label_protein"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Protein"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/DailyTrackerEntry_ET_Protein"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/value_box"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:layout_marginEnd="6dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_protein"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_weight="3"
+                    android:progress="0"
+                    android:max="180"
+                    android:progressDrawable="@drawable/progress_bar_green"
+                    android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:id="@+id/DailyTrackerEntry_LBL_MaxProtein"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="180 g"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- Fat -->
+            <LinearLayout
+                android:id="@+id/row_fat"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/label_fat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Fat"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/DailyTrackerEntry_ET_Fat"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/value_box"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:layout_marginEnd="6dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_fat"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_weight="3"
+                    android:progress="0"
+                    android:max="80"
+                    android:progressDrawable="@drawable/progress_bar_green"
+                    android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:id="@+id/DailyTrackerEntry_LBL_MaxFat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="80 g"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- Sleep -->
+            <LinearLayout
+                android:id="@+id/row_sleep"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/label_sleep"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Sleep"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/DailyTrackerEntry_ET_Sleep"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/value_box"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:layout_marginEnd="6dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_sleep"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_weight="3"
+                    android:progress="0"
+                    android:max="8"
+                    android:progressDrawable="@drawable/progress_bar_green"
+                    android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:id="@+id/DailyTrackerEntry_LBL_MaxSleep"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="8 h"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- Steps -->
+            <LinearLayout
+                android:id="@+id/row_steps"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/label_steps"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Steps"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/DailyTrackerEntry_ET_Steps"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/value_box"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:layout_marginEnd="6dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_steps"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_weight="3"
+                    android:progress="0"
+                    android:max="7000"
+                    android:progressDrawable="@drawable/progress_bar_green"
+                    android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:id="@+id/DailyTrackerEntry_LBL_MaxSteps"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="7000 steps"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- Weight -->
+            <!-- Weight (רק להזנה, לא יעד) -->
+            <LinearLayout
+                android:id="@+id/row_weight"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/label_weight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Weight"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/DailyTrackerEntry_ET_Weight"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/value_box"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="4"
+                    android:layout_marginEnd="6dp" />
+
+                <TextView
+                    android:id="@+id/unit_weight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="kg"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/DailytrackerEntry_BTN_Save"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Save"
+                    android:backgroundTint="#7ED957"
+                    android:textColor="#232323"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/DailytrackerEntry_BTN_Reset"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Reset"
+                    android:backgroundTint="#FF5757"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <include
+                android:id="@+id/bottom_bar"
+                layout="@layout/bottom_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"/>
+        </LinearLayout>
+</RelativeLayout>

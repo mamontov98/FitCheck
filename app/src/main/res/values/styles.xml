@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FitCheck" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#232323</item>
+        <item name="colorPrimaryDark">#232323</item>
+        <item name="colorAccent">#D5FF39</item>
+    </style>
+
+    <style name="Theme.FitCheck.AppCompat" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">#232323</item>
+        <item name="colorPrimaryDark">#232323</item>
+        <item name="colorAccent">#D5FF39</item>
+    </style>
+
+</resources>
