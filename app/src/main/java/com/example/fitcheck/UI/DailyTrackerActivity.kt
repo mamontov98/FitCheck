@@ -10,6 +10,7 @@ import com.example.fitcheck.R
 import com.example.fitcheck.logic.DailyTrackerManager
 import com.example.fitcheck.logic.GoalsManager
 import com.example.fitcheck.model.DailyTrackerEntry
+import com.example.fitcheck.model.Goals
 
 class DailyTrackerActivity : AppCompatActivity() {
 
@@ -42,7 +43,7 @@ class DailyTrackerActivity : AppCompatActivity() {
     private lateinit var DailyTrackerEntry_BTN_Reset: Button
 
     // User's goals
-    private var lastGoals: com.example.fitcheck.model.Goals? = null
+    private var lastGoals:Goals? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -113,15 +114,25 @@ class DailyTrackerActivity : AppCompatActivity() {
     }
 
     // Sets progress bar max values and UI labels according to user goals
-    private fun setGoalsLimits(goals: com.example.fitcheck.model.Goals) {
-        progressBarCalories.max = goals.calories
+    private fun setGoalsLimits(goals: Goals) {
+        val maxCalories =
+            if (goals.calories > 0)
+            {
+                goals.calories
+            }
+            else
+            {
+                goalsManager.calculateCalories(goals.carbs, goals.protein, goals.fat)
+            }
+
+        progressBarCalories.max = maxCalories
         ProgressBarCarbs.max = goals.carbs
         ProgressBarProtein.max = goals.protein
         ProgressBarFat.max = goals.fat
         ProgressBarSteps.max = goals.steps
         ProgressBarSleep.max = goals.sleep
 
-        DailyTrackerEntry_LBL_MaxCalories.text = "${goals.calories} kal"
+        DailyTrackerEntry_LBL_MaxCalories.text = "${maxCalories} kal"
         DailyTrackerEntry_LBL_MaxCarbs.text = "${goals.carbs} g"
         DailyTrackerEntry_LBL_MaxProtein.text = "${goals.protein} g"
         DailyTrackerEntry_LBL_MaxFat.text = "${goals.fat} g"

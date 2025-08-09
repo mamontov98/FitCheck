@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#232323">
 
-    <!-- לוגו -->
+
     <ImageView
         android:id="@+id/signup_IMG_logo"
         android:layout_width="90dp"
@@ -14,7 +14,7 @@
         android:src="@drawable/check"
         android:contentDescription="Logo" />
 
-    <!-- כותרת -->
+
     <TextView
         android:id="@+id/signup_TXT_title"
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp" />
 
-    <!-- אימייל -->
+
     <EditText
         android:id="@+id/SingUp_ET_emailInput"
         android:layout_width="320dp"
@@ -55,7 +55,7 @@
         android:inputType="textEmailAddress"
         android:elevation="2dp" />
 
-    <!-- סיסמה -->
+
     <EditText
         android:id="@+id/SingUp_ET_password"
         android:layout_width="320dp"
@@ -72,7 +72,7 @@
         android:inputType="textPassword"
         android:elevation="2dp" />
 
-    <!-- כפתור הרשמה -->
+
     <Button
         android:id="@+id/SignUp_BTN_signupButton"
         android:layout_width="320dp"

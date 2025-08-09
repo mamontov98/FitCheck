@@ -5,7 +5,7 @@
     android:background="#232323"
     android:padding="16dp">
 
-    <!-- תצוגת תאריך שבוע -->
+
     <TextView
         android:id="@+id/progress_TV_week_range"
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp" />
 
-    <!-- קונטיינר יחסי לתמונה -->
+
     <RelativeLayout
         android:id="@+id/progress_container_image"
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             android:contentDescription="Progress photo" />
     </RelativeLayout>
 
-    <!-- כפתור העלאת תמונה -->
+
     <Button
         android:id="@+id/progress_BTN_upload"
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
         android:textColor="#232323"
         android:elevation="2dp" />
 
-    <!-- כפתור שבוע קודם -->
+
     <Button
         android:id="@+id/progress_BTN_prev"
         android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
         android:textColor="#232323"
         android:elevation="2dp" />
 
-    <!-- כפתור שבוע הבא -->
+
     <Button
         android:id="@+id/progress_BTN_next"
         android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
         android:textColor="#232323"
         android:elevation="2dp" />
 
-    <!-- בר תפריט למטה -->
+
     <include
         android:id="@+id/bottom_bar"
         layout="@layout/bottom_menu"

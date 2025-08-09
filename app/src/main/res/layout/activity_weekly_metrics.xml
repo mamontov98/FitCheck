@@ -42,7 +42,7 @@
         android:layout_alignTop="@id/WeeklyMetrics_LBL_DateRange"
         android:layout_marginStart="18dp"/>
 
-    <!-- RecyclerView למדדים -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMetrics"
         android:layout_width="match_parent"

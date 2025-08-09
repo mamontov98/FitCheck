@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-    <!-- כותרת -->
+
     <TextView
         android:id="@+id/Menu_LBL_title"
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="24dp"/>
 
-    <!-- כפתור 1 -->
+
     <Button
         android:id="@+id/Menu_BTN_goals"
         android:layout_width="340dp"
@@ -31,7 +31,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="0dp"/>
 
-    <!-- כפתור 2 -->
+
     <Button
         android:id="@+id/Menu_BTN_dataEntry"
         android:layout_width="340dp"
@@ -44,7 +44,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="0dp"/>
 
-    <!-- כפתור 3 -->
+
     <Button
         android:id="@+id/Menu_BTN_workouts"
         android:layout_width="340dp"
@@ -57,7 +57,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="0dp"/>
 
-    <!-- כפתור 4 -->
+
     <Button
         android:id="@+id/Menu_BTN_metrics"
         android:layout_width="340dp"
@@ -70,7 +70,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="0dp"/>
 
-    <!-- כפתור 5 -->
+
     <Button
         android:id="@+id/Menu_BTN_checkup"
         android:layout_width="340dp"

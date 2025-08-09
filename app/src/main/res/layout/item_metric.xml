@@ -22,7 +22,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"/>
 
-    <!-- כאן יכנס הגרף הקטן שלך (כרגע אפשר סתם View, אח"כ תכניס CustomView/ספריה) -->
+
     <com.robinhood.spark.SparkView
         android:id="@+id/metricGraph"
         android:layout_width="match_parent"

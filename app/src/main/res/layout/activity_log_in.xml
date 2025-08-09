@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:background="#232323">
 
-    <!-- עיגול ירוק עם וי (אייקון) -->
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="90dp"
@@ -13,7 +13,7 @@
         android:src="@drawable/check"
         android:contentDescription="Logo" />
 
-    <!-- כותרת ראשית -->
+
     <TextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
 
-    <!-- כיתוב משני -->
+
     <TextView
         android:id="@+id/login_subtitle"
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp" />
 
-    <!-- שדה אימייל -->
+
     <EditText
         android:id="@+id/login_ET_emailInput"
         android:layout_width="320dp"
