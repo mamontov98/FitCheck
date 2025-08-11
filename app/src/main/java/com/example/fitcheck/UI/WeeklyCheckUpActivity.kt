@@ -72,7 +72,7 @@ class WeeklyCheckUpActivity : AppCompatActivity() {
 
                 val goalsMap = mapOf(
                     "Weight Goal" to "${goals.weight} kg",
-                    "Calories Goal" to "${goals.calories} kcal",
+                    "Calories Goal" to "${goalsManager.calculateCalories(goals.carbs, goals.protein, goals.fat)} kcal",
                     "Sleep Goal" to "${goals.sleep} h",
                     "Steps Goal" to "${goals.steps}"
                 )

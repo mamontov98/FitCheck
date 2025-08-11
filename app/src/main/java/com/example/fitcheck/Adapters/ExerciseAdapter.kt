@@ -45,7 +45,7 @@ class ExerciseAdapter(
         holder.etPrevReps.setText(exercise.prevReps)
         holder.etPrevWeight.setText(exercise.prevWeight)
 
-        // מאזינים לעדכון הנתונים (רק לשדות הניתנים לעריכה)
+
         holder.etName.doAfterTextChanged { exercise.exerciseName = it?.toString() ?: "" }
         holder.etSets.doAfterTextChanged { exercise.sets = it?.toString()?.toIntOrNull() ?: 0 }
         holder.etReps.doAfterTextChanged { exercise.reps = it?.toString() ?: "" }
